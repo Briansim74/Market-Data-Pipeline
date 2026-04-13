@@ -1,3 +1,50 @@
+# Market Data Pipeline (Exchange-Style Feed Ingestion)
+A structured pipeline (XML / SQL) converting external financial datasets into normalized inputs for trading and risk systems.
+
+## Core Idea
+Trading systems depend less on raw data access and more on:
+consistency, structure, and reliability of data inputs
+
+## Why this matters
+This reflects production trading reality:
+- Bad data breaks good models
+- Pipeline reliability > model complexity
+- Automation is mandatory in live systems
+
+## System Role
+```
+Market data → pricing models → risk systems → execution logic
+```
+## Key Components
+- Automated data extraction (XML feed)
+- Structured transformation (tabular normalization)
+- Persistent storage (SQL)
+- Scheduled refresh automation
+- Integration with downstream trading systems
+
+## Key Insights
+- Data consistency dominates model accuracy
+- Automated ingestion is a core trading dependency
+- Structured inputs are prerequisite for any strategy
+- Pipeline failures propagate into PnL risk
+
+## Trading Interpretation
+This is the foundation layer of:
+- Pricing systems
+- Volatility models
+- Execution engines
+- Risk monitoring systems
+
+## Core Insight
+In trading systems, data quality is a first-order PnL driver.
+
+</br></br></br></br>
+
+
+<details>
+<summary><strong>Implementation Details & Usage</strong></summary>
+
+
 # Automated Market Data Pipeline (XML / SQL)
 A production-style automated market data ingestion pipeline designed to extract, process, and persist structured financial data from a dynamic exchange-style dataset provided by The Clearing Corporation of India (CCIL).
 
@@ -126,7 +173,7 @@ This project serves as the data ingestion layer in a broader quantitative tradin
 
 
 <details>
-<summary><strong>Detailed Implementation & Usage</strong></summary>
+<summary><strong>Implementation Details & Usage</strong></summary>
 
 # Automated XML Web Scraping Financial Data Script
 
@@ -186,6 +233,9 @@ I utilised Ubuntu Linux for the automation of the script. I started a new Cronjo
 Finally, the automation of the Web Scraping Script can be seen by the updating of the Azure SQL database every minute by quering the Security Wise Holdings SQL Table from the Microsoft Azure Portal.
 
 Security_Wise_Holdings.mp4 shows the automation of the script.
+
+</details>
+</br></br>
 
 </details>
 </br></br>
