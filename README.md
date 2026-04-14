@@ -1,4 +1,4 @@
-# Market Data Pipeline (Exchange-Style Feed Ingestion)
+# Market Data Pipeline - Exchange-Style Feed Ingestion
 A structured pipeline (XML / SQL) converting external financial datasets into normalized inputs for trading and risk systems.
 
 ## Core Idea
