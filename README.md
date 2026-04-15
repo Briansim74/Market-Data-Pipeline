@@ -1,81 +1,41 @@
-# Market Data Pipeline - Exchange Feed Ingestion System
-A market data ingestion system that converts raw XML exchange feeds into structured inputs for quantitative trading models.
+# Market Data Pipeline - Exchange Feed Ingestion System (Python / SQL)
+## Trading Problem
+Market data quality is a first-order driver of trading performance. 
 
-The system is built to ensure that trading and pricing models operate on clean, consistent, and reliable market data, where data quality directly affects signal accuracy and downstream PnL.
+Small inconsistencies propagate into pricing, risk, and execution errors.
 
 ## Core Idea
-In trading systems, market data is not just an input - it directly determines:
-- Signal quality
-- Pricing accuracy
-- Execution decisions
-- Risk estimation
-
-This pipeline ensures raw exchange data is transformed into consistent, model-ready trading inputs.
+This system transforms raw exchange data into consistent, model-ready inputs for trading systems.
 
 ## Trading Role in System
 ```
-Market Data Feed → Structured Inputs → Pricing / Risk / Execution Decisions
+Market Data → Pricing Models → Risk Systems → Execution Decisions
 ```
-
-This system represents the data conditioning layer for trading decision systems.
 
 ## Key Components
-- Extraction of multi-page XML market data (~80+ pages)
-- Transformation of raw feeds into structured datasets (Pandas)
-- Standardization of market variables for model consumption
-- Persistent storage in Azure SQL for reproducible analysis
-- Scheduled updates to simulate evolving market conditions
-- Bulk ingestion for fast dataset refresh cycles
+- Extraction of raw XML exchange feeds
+- Structured transformation (ETL pipeline)
+- Normalization of market variables
+- Persistent storage for reproducibility
+- Scheduled updates for time-series consistency
 
-## System Flow
-```
-XML Market Feed
-→ Data Extraction Layer
-→ Structured Transformation (ETL)
-→ Market Data Store (SQL)
-→ Updated Trading Inputs
-→ Pricing / Risk / Execution Models
-```
+## Trading Mapping
+This layer supports:
+- Volatility modeling
+- Tisk calculations
+- Execution strategies
+- Microstructure models
 
-## Trading Interpretation
-Component	Trading Meaning
-XML Feed	Raw market information
-Extraction	Market data capture
-Transformation	Signal-ready data preparation
-SQL Store	Historical market memory
-Scheduled Refresh	Evolving market conditions
-Output	Inputs to trading decisions
 
-| Component           | Trading Meaning                 |
-|---------------------|---------------------------------|
-| XML Feed            | Raw market information          |
-| Extraction          | Market data capture             |
-| Transformation      | Signal-ready data preparation   |
-| SQL Store           | Historical market memory        |
-| Scheduled Refresh   | Evolving market conditions      |
-| Output              | Inputs to trading decisions     |
+## Key Insights
+- Data consistency is critical for trading correctness
+- Small schema inconsistencies amplify into PnL distortion
+- Most model failures originate from data, not modeling
+- Market data is a first-order driver of strategy quality
 
-## How This Fits in Trading
-This system feeds directly into:
-- Volatility and pricing models
-- Risk exposure calculations
-- Execution decision systems
-- Microstructure-based strategies
+## Core Takeaway
+Trading systems are only as reliable as their data infrastructure.
 
-It ensures that all trading decisions are made on consistent and structured market information.
-
-## Key Trading Insights
-- Data quality directly impacts trading performance
-- Small inconsistencies in feeds create large distortions in signals
-- Reliable market structure representation is critical for execution and pricing
-- Trading systems are only as good as their input data consistency
-- Market data must be treated as a first-order driver of PnL quality
-
-## Tech Stack
-Python · Pandas · Selenium · SQL · Azure SQL · Cron · Linux · BCP
-
-## Summary
-A market data system designed to ensure that quantitative trading models operate on clean, consistent, and structurally reliable market inputs, forming the foundation for pricing, risk, and execution decisions.
 
 </br></br></br></br>
 
