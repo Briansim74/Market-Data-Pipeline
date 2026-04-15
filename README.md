@@ -22,7 +22,7 @@ Market Data → Pricing Models → Risk Systems → Execution Decisions
 ## Trading Mapping
 This layer supports:
 - Volatility modeling
-- Tisk calculations
+- Risk calculations
 - Execution strategies
 - Microstructure models
 
