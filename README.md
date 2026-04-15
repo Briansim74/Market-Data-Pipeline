@@ -1,42 +1,81 @@
-# Market Data Pipeline - Exchange-Style Feed Ingestion
-A structured pipeline (XML / SQL) converting external financial datasets into normalized inputs for trading and risk systems.
+# Market Data Pipeline - Exchange Feed Ingestion System
+A market data ingestion system that converts raw XML exchange feeds into structured inputs for quantitative trading models.
+
+The system is built to ensure that trading and pricing models operate on clean, consistent, and reliable market data, where data quality directly affects signal accuracy and downstream PnL.
 
 ## Core Idea
-Trading systems depend less on raw data access and more on:
-consistency, structure, and reliability of data inputs
+In trading systems, market data is not just an input - it directly determines:
+- Signal quality
+- Pricing accuracy
+- Execution decisions
+- Risk estimation
 
-## Why this matters
-This reflects production trading reality:
-- Bad data breaks good models
-- Pipeline reliability > model complexity
-- Automation is mandatory in live systems
+This pipeline ensures raw exchange data is transformed into consistent, model-ready trading inputs.
 
-## System Role
+## Trading Role in System
 ```
-Market data → pricing models → risk systems → execution logic
+Market Data Feed → Structured Inputs → Pricing / Risk / Execution Decisions
 ```
+
+This system represents the data conditioning layer for trading decision systems.
+
 ## Key Components
-- Automated data extraction (XML feed)
-- Structured transformation (tabular normalization)
-- Persistent storage (SQL)
-- Scheduled refresh automation
-- Integration with downstream trading systems
+- Extraction of multi-page XML market data (~80+ pages)
+- Transformation of raw feeds into structured datasets (Pandas)
+- Standardization of market variables for model consumption
+- Persistent storage in Azure SQL for reproducible analysis
+- Scheduled updates to simulate evolving market conditions
+- Bulk ingestion for fast dataset refresh cycles
 
-## Key Insights
-- Data consistency dominates model accuracy
-- Automated ingestion is a core trading dependency
-- Structured inputs are prerequisite for any strategy
-- Pipeline failures propagate into PnL risk
+## System Flow
+```
+XML Market Feed
+→ Data Extraction Layer
+→ Structured Transformation (ETL)
+→ Market Data Store (SQL)
+→ Updated Trading Inputs
+→ Pricing / Risk / Execution Models
+```
 
 ## Trading Interpretation
-This is the foundation layer of:
-- Pricing systems
-- Volatility models
-- Execution engines
-- Risk monitoring systems
+Component	Trading Meaning
+XML Feed	Raw market information
+Extraction	Market data capture
+Transformation	Signal-ready data preparation
+SQL Store	Historical market memory
+Scheduled Refresh	Evolving market conditions
+Output	Inputs to trading decisions
 
-## Core Insight
-In trading systems, data quality is a first-order PnL driver.
+| Component           | Trading Meaning                 |
+|---------------------|---------------------------------|
+| XML Feed            | Raw market information          |
+| Extraction          | Market data capture             |
+| Transformation      | Signal-ready data preparation   |
+| SQL Store           | Historical market memory        |
+| Scheduled Refresh   | Evolving market conditions      |
+| Output              | Inputs to trading decisions     |
+
+## How This Fits in Trading
+This system feeds directly into:
+- Volatility and pricing models
+- Risk exposure calculations
+- Execution decision systems
+- Microstructure-based strategies
+
+It ensures that all trading decisions are made on consistent and structured market information.
+
+## Key Trading Insights
+- Data quality directly impacts trading performance
+- Small inconsistencies in feeds create large distortions in signals
+- Reliable market structure representation is critical for execution and pricing
+- Trading systems are only as good as their input data consistency
+- Market data must be treated as a first-order driver of PnL quality
+
+## Tech Stack
+Python · Pandas · Selenium · SQL · Azure SQL · Cron · Linux · BCP
+
+## Summary
+A market data system designed to ensure that quantitative trading models operate on clean, consistent, and structurally reliable market inputs, forming the foundation for pricing, risk, and execution decisions.
 
 </br></br></br></br>
 
