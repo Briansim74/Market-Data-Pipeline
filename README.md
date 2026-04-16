@@ -1,16 +1,20 @@
 # Market Data Pipeline - Exchange Feed Ingestion System (Python / SQL)
 ## Trading Problem
-Market data quality is a first-order driver of trading performance. 
+Trading models are only as reliable as the market data they consume.
 
-Small inconsistencies propagate into pricing, risk, and execution errors.
+Inconsistent or incomplete market snapshots introduce direct distortion into pricing, risk, and execution signals.
 
 ## Core Idea
-This system transforms raw exchange data into consistent, model-ready inputs for trading systems.
+This system converts raw exchange-style market data into structured, time-consistent inputs suitable for trading models.
+
+It focuses on ensuring data integrity, continuity, and reproducibility across time-series market snapshots.
 
 ## Trading Role in System
 ```
 Market Data → Pricing Models → Risk Systems → Execution Decisions
 ```
+
+This pipeline sits at the foundation of the trading stack, ensuring all downstream components operate on consistent inputs.
 
 ## Key Components
 - Extraction of raw XML exchange feeds
@@ -34,8 +38,7 @@ This layer supports:
 - Market data is a first-order driver of strategy quality
 
 ## Core Takeaway
-Trading systems are only as reliable as their data infrastructure.
-
+Trading performance is constrained by data quality before strategy design - consistent market data is the foundation of reliable pricing, risk, and execution systems.
 
 </br></br></br></br>
 
